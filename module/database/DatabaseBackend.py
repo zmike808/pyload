@@ -283,7 +283,7 @@ class DatabaseBackend(Thread):
     def rollback(self):
         self.conn.rollback()
 
-    def async(self, f, *args, **kwargs):
+    def fuckareyousrs(self, f, *args, **kwargs):
         args = (self, ) + args
         job = DatabaseJob(f, *args, **kwargs)
         self.jobs.put(job)
