@@ -61,11 +61,11 @@ class style():
         return x
 
     @classmethod
-    def async(cls, f):
+    def fuckareyousrsasync(cls, f):
         @staticmethod
         def x(*args, **kwargs):
             if cls.db:
-                return cls.db.async(f, *args, **kwargs)
+                return cls.db.fuckareyousrsasync(f, *args, **kwargs)
         return x
 
 class DatabaseJob():
@@ -271,7 +271,7 @@ class DatabaseBackend(Thread):
     def createCursor(self):
         return self.conn.cursor()
 
-    @style.async
+    @style.fuckareyousrsasync
     def commit(self):
         self.conn.commit()
 
@@ -279,7 +279,7 @@ class DatabaseBackend(Thread):
     def syncSave(self):
         self.conn.commit()
 
-    @style.async
+    @style.fuckareyousrsasync
     def rollback(self):
         self.conn.rollback()
 
@@ -318,7 +318,7 @@ if __name__ == "__main__":
             c = db.createCursor()
             for i in range(1000):
                 c.execute("INSERT INTO storage (identifier, key, value) VALUES (?, ?, ?)", ("foo", i, "bar"))
-        @style.async
+        @style.fuckareyousrsasync
         def insert2(db):
             c = db.createCursor()
             for i in range(1000*1000):

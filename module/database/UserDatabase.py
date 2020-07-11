@@ -76,11 +76,11 @@ class UserMethods():
         return False
 
 
-    @style.async
+    @style.fuckareyousrsasync
     def setPermission(db, user, perms):
         db.c.execute("UPDATE users SET permission=? WHERE name=?", (perms, user))
 
-    @style.async
+    @style.fuckareyousrsasync
     def setRole(db, user, role):
         db.c.execute("UPDATE users SET role=? WHERE name=?", (role, user))
 
