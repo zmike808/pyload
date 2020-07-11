@@ -25,8 +25,8 @@ from time import sleep, time
 
 from base64 import b64decode
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 import re
 import module.common.pylgettext as gettext

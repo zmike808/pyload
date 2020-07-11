@@ -1,0 +1,13 @@
+bottle
+pycurl
+jinja2
+beaker
+thrift
+pycrypto
+tesseract
+pillow
+feedparser
+bs4
+pyOpenSSL
+PyJsEngine
+cherrypy

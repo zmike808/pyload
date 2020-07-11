@@ -59,7 +59,7 @@ class MultishareCz(MultiAccount):
         try:
             api_data = self.api_response("account-details", login=user, password=password)
 
-        except BadHeader,e:
+        except BadHeader as e:
             if e.code == 403:
                 self.fail_login(_("IP is banned"))
             else:

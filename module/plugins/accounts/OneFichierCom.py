@@ -64,7 +64,7 @@ class OneFichierCom(Account):
                    ('>Invalid username or Password', '>Invalid email address', '>Invalid password')):
                 self.fail_login()
 
-        except BadHeader, e:
+        except BadHeader as e:
             if e.code == 403:
                 self.fail_login()
             else:

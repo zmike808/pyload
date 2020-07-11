@@ -45,7 +45,7 @@ class FileboomMe(Account):
             try:
                 json_data = self.api_response("test", auth_token=data['token'])
 
-            except BadHeader, e:
+            except BadHeader as e:
                 if e.code == 403:  #: Session expired
                     pass
 
@@ -57,7 +57,7 @@ class FileboomMe(Account):
         try:
             json_data = self.api_response("login", username=user, password=password)
 
-        except BadHeader, e:
+        except BadHeader as e:
             if e.code == 406:  #: Captcha needed
                 # dummy pyfile
                 pyfile = PyFile(self.pyload.files, -1, "https://fileboom.me", "https://fileboom.me", 0, 0, "", self.classname, -1, -1)
@@ -81,7 +81,7 @@ class FileboomMe(Account):
                                                           re_captcha_challenge=json_data['challenge'],
                                                           re_captcha_response=re_captcha_response)
 
-                        except BadHeader, e:
+                        except BadHeader as e:
                             if e.code == 406:
                                 errors = [json.loads(m.group(0)).get('errorCode', 0) for m in re.finditer(r'{[^}]+}', e.content)]
                                 if 31 in errors:  #: ERROR_CAPTCHA_INVALID
@@ -122,7 +122,7 @@ class FileboomMe(Account):
                                                           captcha_challenge=json_data['challenge'],
                                                           captcha_response=captcha_response)
 
-                        except BadHeader, e:
+                        except BadHeader as e:
                             if e.code == 406:
                                 errors = [json.loads(m.group(0)).get('errorCode', 0) for m in re.finditer(r'{[^}]+}', e.content)]
                                 if 31 in errors:  #: ERROR_CAPTCHA_INVALID

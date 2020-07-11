@@ -21,8 +21,8 @@ SERVER_VERSION = "0.4.20"
 from time import sleep
 from uuid import uuid4 as uuid
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 import socket
 

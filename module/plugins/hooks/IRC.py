@@ -98,7 +98,7 @@ class IRC(Thread, Notifier):
         try:
             self.main_loop()
 
-        except IRCError, ex:
+        except IRCError as ex:
             self.sock.send("QUIT :byebye\r\n")
             if self.pyload.debug:
                 traceback.print_exc()

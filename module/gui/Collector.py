@@ -16,8 +16,8 @@
     @author: mkaay
 """
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 from module.PyFile import statusMap
 from module.utils import formatSize

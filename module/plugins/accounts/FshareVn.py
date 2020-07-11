@@ -63,7 +63,7 @@ class FshareVn(Account):
             try:
                 api_data = self.api_response("user/get", session_id=data['session_id'])
 
-            except BadHeader, e:
+            except BadHeader as e:
                 if e.code == 401:
                     del fshare_session_cache[user]
                     self.db.store("fshare_session_cache", fshare_session_cache)
@@ -83,7 +83,7 @@ class FshareVn(Account):
                                          app_key=self.API_KEY,
                                          user_email=user,
                                          password=password)
-        except BadHeader, e:
+        except BadHeader as e:
             self.fail_login()
 
         if api_data['code'] != 200:

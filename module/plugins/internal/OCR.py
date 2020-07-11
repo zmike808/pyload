@@ -82,7 +82,7 @@ class OCR(Plugin):
             tmpTxt = open(fsjoin("tmp", "tmpTxt_%s.txt" % self.classname), "wb")
             tmpTxt.close()
 
-        except IOError, e:
+        except IOError as e:
             self.log_error(e)
             return
 

@@ -42,7 +42,7 @@ class CloudFlare(object):
             addon_plugin.log_debug("%s() returned successfully" % func_name)
             return data
 
-        except BadHeader, e:
+        except BadHeader as e:
             addon_plugin.log_debug("%s(): got BadHeader exception %s" % (func_name, e.code))
 
             header = parse_html_header(e.header)
@@ -57,7 +57,7 @@ class CloudFlare(object):
                             data = CloudFlare._solve_cf_ddos_challenge(addon_plugin, owner_plugin, e.content)
                             break
 
-                        except BadHeader, e:  #: Possibly we got another ddos challenge
+                        except BadHeader as e:  #: Possibly we got another ddos challenge
                             addon_plugin.log_debug("%s(): got BadHeader exception %s" % (func_name, e.code))
 
                             header = parse_html_header(e.header)
@@ -152,7 +152,7 @@ class CloudFlare(object):
                                      get=get_params,
                                      ref=last_url)
 
-        except BadHeader, e:
+        except BadHeader as e:
             raise e  #: Huston, we have a BadHeader!
 
         except Exception as e:

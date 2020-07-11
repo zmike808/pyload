@@ -46,7 +46,7 @@ class RealdebridCom(MultiAccount):
         try:
             json_data = self.load(self.API_URL + endpoint + method, get=get, post=post)
 
-        except BadHeader, e:
+        except BadHeader as e:
             json_data = e.content
 
         return json.loads(json_data)

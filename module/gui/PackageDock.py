@@ -17,8 +17,8 @@
 """
 import re
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 class NewPackageDock(QDockWidget):
     def __init__(self):

@@ -30,7 +30,7 @@ class DownsterNet(MultiAccount):
             res = self.load(self.API_URL + method,
                             get=get,
                             post=json.dumps(kwargs))
-        except BadHeader, e:
+        except BadHeader as e:
             res = e.content
 
         res = json.loads(res)
@@ -71,7 +71,7 @@ class DownsterNet(MultiAccount):
                                          email=user,
                                          password=password)
 
-        except BadHeader, e:
+        except BadHeader as e:
             self.log_error(e.content)
             self.fail_login()
 

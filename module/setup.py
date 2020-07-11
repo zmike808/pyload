@@ -40,7 +40,7 @@ class Setup():
         langs = self.config.getMetaData("general", "language")["type"].split(";")
         lang = self.ask("Choose your Language / Wähle deine Sprache", "en", langs)
         gettext.setpaths([os.path.join(os.sep, "usr", "share", "pyload", "locale"), None])
-        translation = gettext.translation("setup", os.path.join(self.path, "locale"), languages=[lang, "en"], fallback="en")
+        translation = gettext.translation("setup", os.path.join(self.path, "locale"), languages=[lang, "en"], fallback=True)
         translation.install()
 
         #Input shorthand for yes
@@ -228,8 +228,8 @@ class Setup():
 
         print ("")
 
-        gui = self.check_module("PyQt4")
-        self.print_dep("PyQt4", gui)
+        gui = self.check_module("PyQt5")
+        self.print_dep("PyQt5", gui)
 
         print ("")
         jinja = True

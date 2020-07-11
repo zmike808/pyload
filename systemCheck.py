@@ -41,8 +41,8 @@ def main():
             print("image library:", "missing")
 
     try:
-        import PyQt4.QtCore
-        print("pyqt:", PyQt4.QtCore.PYQT_VERSION_STR)
+        import PyQt5.QtCore
+        print("pyqt:", PyQt5.QtCore.PYQT_VERSION_STR)
     except ImportError:
         print("pyqt:", "missing")
 
@@ -113,9 +113,9 @@ def main():
     gui_err = []
 
     try:
-        import PyQt4
+        import PyQt5
     except ImportError:
-        gui_err.append("GUI won't work without pyqt4 !!")
+        gui_err.append("GUI won't work without pyqt5 !!")
 
     if gui_err:
         print("The system check has detected some errors:\n")

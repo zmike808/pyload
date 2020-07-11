@@ -121,7 +121,7 @@ class AntiVirus(Addon):
                         pyfile.setCustomStatus(_("file moving"))
                         shutil.move(file, self.config.get('quardir'))
 
-                except (IOError, shutil.Error), e:
+                except (IOError, shutil.Error) as e:
                     self.log_error(target_repr, action + " action failed!", e)
 
             elif not err:

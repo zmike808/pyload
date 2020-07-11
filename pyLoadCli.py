@@ -493,7 +493,7 @@ def main():
     gettext.setpaths([join(os.sep, "usr", "share", "pyload", "locale"), None])
     translation = gettext.translation("pyLoadCli", join(pypath, "locale"),
         languages=[config["language"],"en"],fallback=True)
-    translation.install(unicode=True)
+    translation.install()
 
     interactive = False
     command = None
@@ -519,7 +519,7 @@ def main():
                 gettext.setpaths([join(os.sep, "usr", "share", "pyload", "locale"), None])
                 translation = gettext.translation("pyLoadCli", join(pypath, "locale"),
                     languages=[config["language"],"en"],fallback=True)
-                translation.install(unicode=True)
+                translation.install()
             elif option in ("-h", "--help"):
                 print_help(config)
                 exit()
