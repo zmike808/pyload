@@ -354,7 +354,7 @@ class Setup():
         gettext.setpaths([os.path.join(os.sep, "usr", "share", "pyload", "locale"), None])
         translation = gettext.translation("setup", os.path.join(self.path, "locale"),
             languages=[self.config["general"]["language"], "en"], fallback=True)
-        translation.install(True)
+        translation.install()
 
         from module.database import DatabaseBackend
 
@@ -405,7 +405,7 @@ class Setup():
             gettext.setpaths([os.path.join(os.sep, "usr", "share", "pyload", "locale"), None])
             translation = gettext.translation("setup", os.path.join(self.path, "locale"),
                 languages=[self.config["general"]["language"], "en"], fallback=True)
-            translation.install(True)
+            translation.install()
 
         print (_("Setting new configpath, current configuration will not be transfered!"))
         current_path = os.path.abspath("")

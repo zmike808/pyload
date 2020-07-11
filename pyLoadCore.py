@@ -342,7 +342,7 @@ class Core(object):
         gettext.setpaths([join(os.sep, "usr", "share", "pyload", "locale"), None])
         translation = gettext.translation("pyLoad", self.path("locale"),
                                           languages=[self.config['general']['language'],"en"],fallback=True)
-        translation.install(True)
+        translation.install()
 
         self.debug = self.doDebug or self.config['general']['debug_mode']
         self.remote &= self.config['remote']['activated']

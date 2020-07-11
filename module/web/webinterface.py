@@ -112,7 +112,7 @@ env.filters["url"] = lambda x: PREFIX + x if x.startswith("/") else x
 gettext.setpaths([join(os.sep, "usr", "share", "pyload", "locale"), None])
 translation = gettext.translation("django", join(PYLOAD_DIR, "locale"),
     languages=[config.get("general", "language"), "en"],fallback=True)
-translation.install(True)
+translation.install()
 env.install_gettext_translations(translation)
 
 from beaker.middleware import SessionMiddleware
